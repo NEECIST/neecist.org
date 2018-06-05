@@ -1,0 +1,11 @@
+/redirect/drive     https://drive.google.com/drive/folders/1KK-Zl2ceX2UtkXchyoOXYE7nTxxFXU1D 301
+/redirect/istsi     https://istsi.org 301
+/redirect/estagios  https://istsi.org 301
+/redirect/facebook  https://www.facebook.com/NEECIST 301
+/redirect/jeec      https://jeec.ist 301
+/redirect/linkedin  https://www.linkedin.com/company/2977028/ 301
+/redirect/maps      https://encrypted.google.com/maps/place/NEECIST 301
+/redirect/salas     https://fenix.tecnico.ulisboa.pt/conteudos-publicos/pesquisa-de-espacos 301
+/redirect/twitter   https://twitter.com/NEECIST 301
+/redirect/www       / 301
+/redirect/youtube   https://www.youtube.com/user/NEECIST 301
