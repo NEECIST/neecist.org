@@ -125,10 +125,6 @@ def generateSecret():
 	t = tuple(f)						# turns f list to an immutable tuple
 	return t
 
-def genSeq(allowed = list(range(1,9))):	
-	return tuple( [ str( allowed.pop(randint(0,len(allowed)-1)) ) for x in range(0,4) ] )
-
-
 # 2nd - getInput
 '''
 	Gets valid input from terminal ( 4 digit long str tuple without repeating numbers from 1-8 )
