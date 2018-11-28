@@ -45,7 +45,7 @@ class Board:
 		self.printElement('', f='+')
 		result='Matched colors: '+ (str(n) if n != -1 else 'X')	
 		self.printElement( result , c=' ', f='|')
-		result='Matched colors: '+ (str(p) if p != -1 else 'X')
+		result='Placed colors: '+ (str(p) if p != -1 else 'X')
 		self.printElement( result , c=' ', f='|')
 		self.printElement('', f='+')
 
