@@ -7,5 +7,5 @@
 /redirect/maps      https://encrypted.google.com/maps/place/NEECIST 301
 /redirect/salas     https://fenix.tecnico.ulisboa.pt/conteudos-publicos/pesquisa-de-espacos 301
 /redirect/twitter   https://twitter.com/NEECIST 301
-
+/redirect/www       / 301
 /redirect/youtube   https://www.youtube.com/user/NEECIST 301
