@@ -9,3 +9,4 @@
 /redirect/twitter   https://twitter.com/NEECIST 301
 /redirect/www       / 301
 /redirect/youtube   https://www.youtube.com/user/NEECIST 301
+/redirect/neecathon http://51.140.123.139:8080 301
