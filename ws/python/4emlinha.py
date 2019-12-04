@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Dec  4 15:52:54 2019
-
-@author: Mariana
-"""
-
 #importes
 import numpy as np
 import pygame
@@ -80,7 +73,7 @@ def vitoria(tabuleiro, linha, coluna):
         pass
     try:
         for x in [1,2,3]:
-            if linha-x or coluna-x:
+            if linha-x>=0 and coluna-x>=0:
                 if(tabuleiro[linha][coluna] == tabuleiro[linha-x][coluna-x]):
                     d1 = d1+1
                     #print('d1:',d1)
