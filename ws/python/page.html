@@ -1,0 +1,33 @@
+<html lang="pt">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Test</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="LCD">
+			<h2 style="text-align:center">LCD</h2>
+		</div>
+		<form style="text-align:center" action="/print" method="post">
+			<h3><label for="fname">Text:</label></h3><br>
+			<input class="LCDInsertText" type="text" placeholder="Insert text here" id="fname" name="fname"><br>
+			<input class="LCDSubmit" type="submit" value="Submit">
+		</form>
+
+		<hr class="solid">
+
+		<h3 class="Controlador" style="text-align:center">Controlador</h3>
+		<div class="Arrows">
+			<div style="text-align:center;">
+				<form action="/moveup" method="POST" style="display: inline-block;  margin-bottom: 7px;"><input class="ArrowVert" type="submit" style="transform: rotate(-90deg);" value="➜"></form>
+			</div>
+			<div style="text-align:center">
+				<form action="/moveleft" method="POST" style="display: inline-block;"><input class="ArrowHor" type="submit" style="transform: rotate(180deg);" value="➜"></form>
+				<form action="/movedown" method="POST" style="display: inline-block;"><input class="ArrowVert" type="submit" style="transform: rotate(90deg);" value="➜"></form>
+				<form action="/moveright" method="POST" style="display: inline-block;"><input class="ArrowHor" type="submit" value="➜"></form>
+			</div>
+		</div>
+	</body>
+</html>
