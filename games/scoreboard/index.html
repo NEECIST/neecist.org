@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <script src="./assets/main.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <title>Scoreboards</title>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a class="active">Rankings</a>
+        <a href="#" class="dropdown_item-1" >Typing Contest</a>
+        <a href="#" class="dropdown_item-2" >Reaction Time</a>
+        <a href="#" class="dropdown_item-3" >Jogo Da Memória</a>
+        <a href="#" class="dropdown_item-4" >Speed Quiz</a>
+        <a href="javascript:goBack()" class="dropdown_item-5"><i class="fas fa-arrow-circle-left"></i> Back</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class='container cadeira'>
+        <div class='teoricas tres'>
+            <a class='title'>Typing Contest</a>
+            <a class='first' href='#'>1º - Armando - 320 wpm</a>
+            <a class='next' href='#'>2º - Amanda - 41</a>
+            <a class='next' href='#'>3º - Armindo - 37</a>
+            <a class='next' href='#'>4º - Amarino - 34</a>
+            <a class='next' href='#'>5º - Antonieta - 33</a>
+            <a class='next' href='#'>6º - Sérgio - 25</a>
+            <a class='next' href='#'>7º - Alice - 23</a>
+        </div>
+        <div class='teoricas tres'>
+            <a class='title'>Reaction Time</a>
+            <a class='first' href='#'>1º - Armando - 320 wpm</a>
+            <a class='next' href='#'>2º</a>
+            <a class='next' href='#'>3º</a>
+
+        </div>
+        <div class='teoricas tres'>
+            <a class='title'>Jogo Da Memória</a>
+            <a class='first' href='#'>1º</a>
+            <a class='next' href='#'>2º</a>
+            <a class='next' href='#'>3º</a>
+
+        </div>
+        <div class='teoricas tres'>
+            <a class='title'>Speed Quiz</a>
+            <a class='first' href='#'>1º</a>
+            <a class='next' href='#'>2º</a>
+            <a class='next' href='#'>3º</a>
+
+        </div>
+    </div>
+    <button onclick="loadFile('https:\/\/cors.midas-cloud.xyz:1769\/https:\/\/drive.google.com\/uc?export=download&id=1WZyhJel9_sjShc0KmPDJiQPWhgVCxq0p' )">Teste</button>
+    <a href="javascript:void(0);" class="icon" onclick="loadFile('https:\/\/filesamples.com\/samples\/document\/txt\/sample1.txt')">typingcontest.csv</a>
+    
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function change(cadeira, n) {
+            var x = document.getElementsByClassName(cadeira);
+            var y = document.getElementsByClassName("cadeira");
+
+            document.cookie = "cadeira=" + cadeira + "; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+            document.cookie = "n=" + n + "; expires=Wed, 18 Dec 2026 12:00:00 GMT";
+
+            console.log(x);
+
+
+            for (let item of y) {
+                item.className += " invisible";
+            }
+            console.log(x);
+            for (let item of x) {
+                item.classList.remove("invisible");
+                item.className += " visible";
+            }
+            console.log(x);
+
+            x = document.getElementById("myTopnav");
+            x = x.children;
+            console.log(x);
+            for (let item of x) {
+                item.classList.remove("selected");
+            }
+            x[n].className += " selected";
+            x = document.getElementById("myTopnav");
+            x.className = "topnav";
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>
