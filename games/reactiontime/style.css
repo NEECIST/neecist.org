@@ -2,25 +2,53 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     background-color: white;
-    padding: 0;
-    margin: 0;
-}
-
-h1 {
-    text-align: center;
-    padding: 20px 0 12px 0;
-    color: white;
     margin: 0;
 }
 
 .top {
     background-color: #009de0;
-    border: black;
-    padding: 0;
-    margin: 0;
 }
 
-input {
+.top h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.top img {
+    width: 150px;
+    margin: 5px;
+}
+
+@media screen and (min-width: 400px) {
+    .top {
+        text-align: center;
+    }
+    
+    .top img {
+        position: relative;
+        float: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .top {
+        text-align: unset;
+    }
+    
+    .top img {
+        position: absolute;
+        float: left;
+    }
+}
+
+.main {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.main input {
     width: 150px;
     height: 50px;
     background-color: #009de0;
@@ -30,16 +58,8 @@ input {
     font-weight: bold;
 }
 
-.center {
-    margin: auto;
-    width: 50%;
-    text-align: center;
-}
-
-#logo-neec-full {
-    width: 15%;
-    position: fixed;
-    margin: 5px;
+.main input:hover {
+    background-color: #00bfff;
 }
 
 #logo-neec {
@@ -48,9 +68,4 @@ input {
     display: none;
     position: relative;
     margin: auto;
-}
-
-#countdown {
-    font-weight: bold;
-    font-size: xx-large;
 }
