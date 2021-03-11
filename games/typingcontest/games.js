@@ -59,11 +59,7 @@ var letters =  $("#input_text").val();
 var started = false;
 var current_string = letters.substring(index, index + character_length);
 
-var wordcount = 0;
-
-$("html, body").click(function(){
-  $("#textarea").focus();
-});
+var charcount = 0;
 
 $("#target").text(current_string);
 $(window).keypress(function(evt){
@@ -75,23 +71,20 @@ $(window).keypress(function(evt){
   var charCode = evt.which || evt.keyCode;
   var charTyped = String.fromCharCode(charCode);
   if(charTyped == letters.charAt(index) && current_errors == 0){
-    if(charTyped == " "){
-      wordcount ++;
-      $("#wordcount").text(wordcount);
-    }
+    charcount ++;
+    $("#charcount").text(charcount);
+
     index ++;
     current_string = letters.substring(index, index + character_length);
     $("#target").text(current_string);
     $("#your-attempt").append(charTyped);
     if(index == letters.length){
-      wordcount ++;
-      $("#wordcount").text(wordcount);
       $("#timer").text(timer);
       if(timer == 0){
         timer = 1;
       }
-      wpm = Math.round(wordcount / (timer / 60));
-      $("#wpm").text(wpm);
+      cpm = Math.round(charcount / (timer / 60));
+      $("#cpm").text(cpm);
       stop();
       finished();
     }
@@ -117,7 +110,7 @@ $(window).keydown(function(evt){
 });
 
 var timer = 0;
-var wpm = 0;
+var cpm = 0;
 var errors = 0;
 var current_errors = 0;
 var interval_timer;
@@ -134,8 +127,8 @@ function start(){
   interval_timer = setInterval(function(){
     timer ++;
     $("#timer").text(timer);
-    wpm = Math.round(wordcount / (timer / 60));
-    $("#wpm").text(wpm);
+    cpm = Math.round(charcount / (timer / 60));
+    $("#cpm").text(cpm);
   }, 1000)
 }
 
@@ -154,32 +147,16 @@ function reset(){
   started = false;
   letters = $("#input_text").val();
   $("#errors").text("0");
-  $("#wpm").text("0");
+  $("#cpm").text("0");
   $("#timer").text("0");
-  $("#wordcount").text("0");
+  $("#charcount").text("0");
   timer = 0;
-  wpm = 0;
+  charcount = 0;
+  cpm = 0;
   current_string = letters.substring(index, index + character_length);
   $("#target").text(current_string);
 }
 
 function finished(){
-  alert("Congratulations!\nWords per minute: " + wpm + "\nWordcount: " + wordcount + "\nErrors:" + errors);
+  alert("Congratulations!\nCharacters per minute: " + cpm + "\nCharcount: " + charcount + "\nErrors:" + errors);
 }
-
-var window_focus;
-
-$(window).focus(function() {
-    window_focus = true;
-}).blur(function() {
-  window_focus = false;
-});
-
-$(document).ready(function(){
-  if(window_focus){
-    $("#focus").hide();
-  }
-  $(window).focus(function() {
-    $("#focus").hide();
-  });
-});
