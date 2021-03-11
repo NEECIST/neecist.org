@@ -12,6 +12,7 @@ function loadFile(filePath) {
   if (xmlhttp.status == 200) {
     result = xmlhttp.responseText;
     console.log(result);
+    document.getElementById("text").innerText = result;
     /*var splitted = result.split(/,|\n/gm);
     var size = splitted.length;
     var list = [];
