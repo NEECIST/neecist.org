@@ -87,7 +87,6 @@ $(window).keypress(function(evt){
         }
         cpm = Math.round(charcount / (timer / 60));
         $("#cpm").text(cpm);
-        ended = true;
         stop();
         finished();
       }
@@ -165,4 +164,5 @@ function reset(){
 
 function finished(){
   alert("Congratulations!\nCharacters per minute: " + cpm + "\nCharcount: " + charcount + "\nErrors:" + errors);
+  ended = true;
 }
