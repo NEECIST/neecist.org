@@ -60,8 +60,79 @@ button {
     margin-top: 40px;
 }
 
+.buttons > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+button:focus {
+    outline: none;
+}
+
+.buttons > div:nth-child(2) {
+    justify-content: space-evenly;
+}
+
+.arcade-button {
+    margin: 0;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    padding: 0;
+    z-index: 1;
+    border: 2px solid black;
+}
+
+.arcade-button::before {
+    top: -10;
+    left: -10;
+    content: " ";
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background-color: #004e70;
+}
+
+.arcade-button-container {
+    margin: 0 100px;
+    display: inline-block;
+    position: relative;
+}
+
+.scoreboard {
+    margin: 0;
+    height: 50px;
+    width: 130px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.scoreboard::before{
+    top: -10;
+    left: -10;
+    content: " ";
+    display: inline-block;
+    height: 70px;
+    width: 150px;
+    border-radius: 15px;
+    position: absolute;
+    z-index: -1;
+    background-color: #004e70;
+}
+
+.scoreboard-container {
+    margin-top: 40px;
+    position: relative;
+    display: inline-block;
+}
+
 .mascots {
-    margin-top: 125px;
+    margin-top: 80px;
 }
 
 img {
