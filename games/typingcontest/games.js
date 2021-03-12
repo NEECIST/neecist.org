@@ -57,42 +57,46 @@ var character_length = 31;
 var index = 0;
 var letters =  $("#input_text").val();
 var started = false;
+var ended = false;
 var current_string = letters.substring(index, index + character_length);
 
 var charcount = 0;
 
 $("#target").text(current_string);
 $(window).keypress(function(evt){
-  if(!started){
-    start();
-    started = true;
-  }
-  evt = evt || window.event;
-  var charCode = evt.which || evt.keyCode;
-  var charTyped = String.fromCharCode(charCode);
-  if(charTyped == letters.charAt(index) && current_errors == 0){
-    charcount ++;
-    $("#charcount").text(charcount);
-
-    index ++;
-    current_string = letters.substring(index, index + character_length);
-    $("#target").text(current_string);
-    $("#your-attempt").append(charTyped);
-    if(index == letters.length){
-      $("#timer").text(timer);
-      if(timer == 0){
-        timer = 1;
-      }
-      cpm = Math.round(charcount / (timer / 60));
-      $("#cpm").text(cpm);
-      stop();
-      finished();
+  if (!ended){
+    if(!started){
+      start();
+      started = true;
     }
-  }else{
-    $("#your-attempt").append("<span class='wrong'>" + charTyped + "</span>");
-    errors ++;
-    current_errors ++;
-    $("#errors").text(errors);
+    evt = evt || window.event;
+    var charCode = evt.which || evt.keyCode;
+    var charTyped = String.fromCharCode(charCode);
+    if(charTyped == letters.charAt(index) && current_errors == 0){
+      charcount ++;
+      $("#charcount").text(charcount);
+
+      index ++;
+      current_string = letters.substring(index, index + character_length);
+      $("#target").text(current_string);
+      $("#your-attempt").append(charTyped);
+      if(index == letters.length){
+        $("#timer").text(timer);
+        if(timer == 0){
+          timer = 1;
+        }
+        cpm = Math.round(charcount / (timer / 60));
+        $("#cpm").text(cpm);
+        ended = true;
+        stop();
+        finished();
+      }
+    }else{
+      $("#your-attempt").append("<span class='wrong'>" + charTyped + "</span>");
+      errors ++;
+      current_errors ++;
+      $("#errors").text(errors);
+    }
   }
 });
 
@@ -146,6 +150,7 @@ function reset(){
   current_errors = 0;
   clearInterval(interval_timer);
   started = false;
+  ended = false;
   letters = $("#input_text").val();
   $("#errors").text("0");
   $("#cpm").text("0");
