@@ -19,7 +19,7 @@ time_setting = 30;
 // How much to 'sway' (random * this-many-milliseconds)
 random_setting = 100;
 // The text to use NB use \n not real life line breaks!
-input_text = "How fast can you type?";
+input_text = "Quão rápido consegues escrever?";
 // Where to fill up
 target_setting = $("#output");
 
@@ -115,7 +115,7 @@ var errors = 0;
 var current_errors = 0;
 var interval_timer;
 
-$("#reset").click(function(){
+$("#new").click(function(){
   reset();
 });
 
@@ -140,6 +140,7 @@ function stop(){
 function reset(){
   $("#input_text").blur().hide();;
   $("#your-attempt").text("");
+  $("#input_text").text(typing_text[Math.floor(Math.random() * typing_text.length)]);
   index = 0;
   errors = 0;
   current_errors = 0;
