@@ -1,0 +1,160 @@
+html {
+    height: 100% !important;
+}
+
+body{
+  background-color:rgb(46, 40, 40)
+}
+
+.top {
+    background-color: #009de0;
+    border: black;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0 12px 0;
+    color: white;
+    margin: 0;
+}
+
+#logo-neec-full {
+    width: 18%;
+    position: fixed;
+    margin: 5px;
+}
+
+.card_game{
+    padding:5vh;
+    background-image: linear-gradient(to left bottom, #24211d, #3b3535);
+}
+
+.row{
+    margin: 0 -5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin: 10vh;
+}
+
+.column {
+  float: left;
+  width: 10vh;
+  padding: 0 20px;
+}
+
+.container {
+  height: 10px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: #009de0;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 8px;
+  transition-duration: 0.3s;
+}
+
+.button:hover {
+  background-color: #006692;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*cartas*/
+.card {
+  border-radius:7%;
+  background-color: transparent;
+  width: 12vh;
+  height: 15vh;
+  border: 1px solid #f1f1f1;
+  perspective: 100px;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(56,56,245,1) 0%, rgba(40,173,200,1) 70%);
+  color: white;
+}
+
+.flipped{
+  border-radius:7%;
+  pointer-events: none;
+  transition: 0.5s;
+  width: 12vh;
+  height: 15vh;
+  transform: rotateY(180deg);
+  background-color: black;
+  border: 1px solid #f1f1f1;
+  perspective: 100px;
+}
+
+.flipped img{
+  border-radius:7%;
+  width: 100%;
+  height: 99.5%;
+  display: centered;
+}
+
+.paired {
+  border-radius:7%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  pointer-events: none;
+  width: 12vh;
+  height: 15vh;
+  background-color: grey;
+  border: 2px solid greenyellow;
+}
+
+.paired img{
+  border-radius:7%;
+  width: 100%;
+  height: 99.5%;
+  display: centered;
+}
+
+/*stats*/
+
+.moves{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:whitesmoke;
+}
+
+.timer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:whitesmoke;
+}
+
+.final{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color:greenyellow;
+}
