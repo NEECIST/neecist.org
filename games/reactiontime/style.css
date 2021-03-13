@@ -14,20 +14,47 @@ body {
     background-color: #009de0;
     font-family: Arcade;
     font-size: 14px;
-    padding-top: 6px;
-    padding-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.container-left {
+    display: flex;
+    height: 5vh;
+    width: 25vw;
+    text-align: left;
+}
+
+.container-right {
+    display: flex;
+    height: 5vh;
+    width: 25vw;
+    align-items: center;
+}
+
+.container-center {
+    display: flex;
+    height: 5vh;
 }
 
 .top h1 {
     margin: 0;
     color: white;
-    font-size: 2.4em;
+    font-size: 2.5em;
     text-align: center;
+    line-height: 5.5vh;
 }
 
 .top img {
-    width: 150px;
+    width: 10em;
     margin: 5px;
+}
+
+.top a {
+    margin-left: auto;
+    text-decoration: none;
+    color: white;
 }
 
 @media screen and (min-width: 400px) {
@@ -48,7 +75,7 @@ body {
     }
     
     .top img {
-        position: absolute;
+        position: relative;
         float: left;
         top: 0;
         left: 0;
@@ -61,7 +88,17 @@ body {
     text-align: center;
 }
 
-.main input {
+.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    align-items: center;
+}
+
+.bottom input {
     width: 150px;
     height: 50px;
     background-color: #009de0;
@@ -71,7 +108,7 @@ body {
     font-weight: bold;
 }
 
-.main input:hover {
+.bottom input:hover {
     background-color: #00bfff;
 }
 

@@ -11,29 +11,30 @@
 </head>
 <body>
     <div class="top">
-        <img id="logo-neec-full" src="assets/Logo_NEEC_White.png" alt="Logo NEEC Completo">
-        <h1>Reaction Time</h1>
-        <input type="button" onclick="goBack()" value="Go Back">
-        <script type="text/javascript">
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+        <div class="container-left">
+            <img id="logo-neec-full" src="assets/Logo_NEEC_White.png" alt="Logo NEEC Completo">
+        </div>
+        <div class="container-center">
+            <h1>Reaction Time</h1>
+        </div>
+        <div class="container-right">
+            <a href="http://neecist.org/games">Back</a>
+        </div>
     </div>
     
     <div class="main">
         <h1>Testa o teu tempo de Reação!</h1>
         <hr>
-
-        <p>Clica no botão abaixo para inciar o teste.</p>
-        <input id="start-button" class="button" type="button" value="Testar">
         
         <h1 id="countdown"></h1>
-        <p id="reaction-time"></p>
-    
+        
         <img id="logo-neec" src="assets/logo_neec.png" alt="Logo NEEC" draggable="false">
     </div>
-    
+
+    <div class="bottom">
+        <p id="reaction-time"></p>
+        <input id="start-button" class="button" type="button" value="Testar">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
