@@ -19,7 +19,7 @@ time_setting = 30;
 // How much to 'sway' (random * this-many-milliseconds)
 random_setting = 100;
 // The text to use NB use \n not real life line breaks!
-input_text = "How fast can you type?";
+input_text = "Quão rápido consegues escrever?";
 // Where to fill up
 target_setting = $("#output");
 
@@ -57,42 +57,45 @@ var character_length = 31;
 var index = 0;
 var letters =  $("#input_text").val();
 var started = false;
+var ended = false;
 var current_string = letters.substring(index, index + character_length);
 
 var charcount = 0;
 
 $("#target").text(current_string);
 $(window).keypress(function(evt){
-  if(!started){
-    start();
-    started = true;
-  }
-  evt = evt || window.event;
-  var charCode = evt.which || evt.keyCode;
-  var charTyped = String.fromCharCode(charCode);
-  if(charTyped == letters.charAt(index) && current_errors == 0){
-    charcount ++;
-    $("#charcount").text(charcount);
-
-    index ++;
-    current_string = letters.substring(index, index + character_length);
-    $("#target").text(current_string);
-    $("#your-attempt").append(charTyped);
-    if(index == letters.length){
-      $("#timer").text(timer);
-      if(timer == 0){
-        timer = 1;
-      }
-      cpm = Math.round(charcount / (timer / 60));
-      $("#cpm").text(cpm);
-      stop();
-      finished();
+  if (!ended){
+    if(!started){
+      start();
+      started = true;
     }
-  }else{
-    $("#your-attempt").append("<span class='wrong'>" + charTyped + "</span>");
-    errors ++;
-    current_errors ++;
-    $("#errors").text(errors);
+    evt = evt || window.event;
+    var charCode = evt.which || evt.keyCode;
+    var charTyped = String.fromCharCode(charCode);
+    if(charTyped == letters.charAt(index) && current_errors == 0){
+      charcount ++;
+      $("#charcount").text(charcount);
+
+      index ++;
+      current_string = letters.substring(index, index + character_length);
+      $("#target").text(current_string);
+      $("#your-attempt").append(charTyped);
+      if(index == letters.length){
+        $("#timer").text(timer);
+        if(timer == 0){
+          timer = 1;
+        }
+        cpm = Math.round(charcount / (timer / 60));
+        $("#cpm").text(cpm);
+        stop();
+        finished();
+      }
+    }else{
+      $("#your-attempt").append("<span class='wrong'>" + charTyped + "</span>");
+      errors ++;
+      current_errors ++;
+      $("#errors").text(errors);
+    }
   }
 });
 
@@ -115,7 +118,7 @@ var errors = 0;
 var current_errors = 0;
 var interval_timer;
 
-$("#reset").click(function(){
+$("#new").click(function(){
   reset();
 });
 
@@ -140,11 +143,13 @@ function stop(){
 function reset(){
   $("#input_text").blur().hide();;
   $("#your-attempt").text("");
+  $("#input_text").text(typing_text[Math.floor(Math.random() * typing_text.length)]);
   index = 0;
   errors = 0;
   current_errors = 0;
   clearInterval(interval_timer);
   started = false;
+  ended = false;
   letters = $("#input_text").val();
   $("#errors").text("0");
   $("#cpm").text("0");
@@ -159,4 +164,5 @@ function reset(){
 
 function finished(){
   alert("Congratulations!\nCharacters per minute: " + cpm + "\nCharcount: " + charcount + "\nErrors:" + errors);
+  ended = true;
 }
