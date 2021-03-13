@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reaction Time Game</title>
+    <link rel="font" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:400,900,700" type="text/css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/logo_neec.png">
 </head>
 <body>
     <div class="top">
         <img id="logo-neec-full" src="assets/Logo_NEEC_White.png" alt="Logo NEEC Completo">
-        <h1>Testa o teu tempo de reação!</h1>
+        <h1>Reaction Time</h1>
+        <input type="button" onclick="goBack()" value="Go Back">
+        <script type="text/javascript">
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </div>
     
     <div class="main">
+        <h1>Testa o teu tempo de Reação!</h1>
+        <hr>
+
         <p>Clica no botão abaixo para inciar o teste.</p>
         <input id="start-button" class="button" type="button" value="Testar">
         
