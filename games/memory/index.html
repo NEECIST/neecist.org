@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="games.css">
+</head>
+
+<body onload="start_card_game()">
+    <div class="top">
+        <img id="logo-neec-full" class="image" src="./assets/cards/Logo_NEEC_White.png" alt="Logo NEEC Completo">
+        <h1>Encontra todos os pares!</h1>
+    </div>
+    <div class="card_game">
+        <div class="stats">
+            <div class="timer">
+                <p>
+                    Tempo:
+                    <a id="tempo"></a> <a id="legenda_tempo"></a>
+                </p>
+            </div>
+            <div class="moves">
+                <p>
+                    Movimentos:
+                    <a id="movimentos"></a>
+                </p>
+            </div>
+        </div>
+        <div id="game"></div>
+        <div class="container">
+            <div class="center">
+                <button class="button" onclick="start_time()" id="start_btn">Começar!</button>
+            </div>
+        </div>
+    </div>
+    <script src="games.js"></script>
+</body>
+
+</html>
