@@ -4,7 +4,7 @@
 } 
 
 html {
-  height: 100% !important;
+  height: 100%;
 }
 
 body{
@@ -15,83 +15,60 @@ body{
 }
 
 .top {
+  position: relative;
+  width: 100%;
   background-color: #009de0;
   font-family: Arcade;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 .container-left {
   display: flex;
-  height: 5vh;
-  width: 25vw;
+  height: auto;
+  width: 15vw;
   text-align: left;
 }
 
 .container-right {
   display: flex;
-  height: 5vh;
-  width: 25vw;
+  height: auto;
+  width: 15vw;
   align-items: center;
 }
 
 .container-center {
   display: flex;
-  height: 5vh;
+  height: auto;
+  width: auto;
 }
 
 .top h1 {
-  margin: 0;
+  margin: 5px;
   color: white;
   font-size: 2.5em;
   text-align: center;
-  line-height: 5.5vh;
 }
 
 .top img {
-  width: 10em;
-  margin: 5px;
+  width: 10vw;
+  margin-right: auto;
+  margin-left: 0.5vw;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .top a {
   margin-left: auto;
+  margin-right: 0.5vw;
+  margin-top: auto;
+  margin-bottom: auto;
   text-decoration: none;
+  text-align: end;
   color: white;
-  padding: 5px;
 }
-
-.main {
-  margin: auto;
-  width: 50%;
-  text-align: center;
-}
-
-.bottom {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  text-align: center;
-  align-items: center;
-}
-
-.bottom input {
-  width: 150px;
-  height: 50px;
-  background-color: #009de0;
-  color: white;
-  border: 0;
-  font-size: larger;
-  font-weight: bold;
-}
-
-.bottom input:hover {
-  background-color: #00bfff;
-}
-
 
 .card_game{
     padding:5vh;

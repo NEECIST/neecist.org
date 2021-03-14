@@ -3,69 +3,8 @@
     src: url(../fonts/PressStart2P-Regular.ttf);
 }
 
-.background {
-  background-color: #ffffff;
-  opacity: 0.06;
-  background-image: linear-gradient(30deg, #009de0 12%, transparent 12.5%, transparent 87%, #009de0 87.5%, #009de0),
-    linear-gradient(150deg, #009de0 12%, transparent 12.5%, transparent 87%, #009de0 87.5%, #009de0), linear-gradient(30deg, #009de0 12%, transparent 12.5%, transparent 87%, #009de0 87.5%, #009de0),
-    linear-gradient(150deg, #009de0 12%, transparent 12.5%, transparent 87%, #009de0 87.5%, #009de0),
-    linear-gradient(60deg, #009de077 25%, transparent 25.5%, transparent 75%, #009de077 75%, #009de077),
-    linear-gradient(60deg, #009de077 25%, transparent 25.5%, transparent 75%, #009de077 75%, #009de077);
-  background-size: 30px 53px;
-  background-position: 0 0, 0 0, 15px 26px, 15px 26px, 0 0, 15px 26px;
-  position: absolute;
+html {
   height: 100%;
-  width: 100%;
-  z-index: -20;
-  pointer-events: none;
-}
-
-.top {
-    background-color: #009de0;
-    font-family: Arcade;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center
-}
-
-.container-left {
-    display: flex;
-    height: 5vh;
-    width: 25vw;
-    text-align: left;
-}
-
-.container-right {
-    display: flex;
-    height: 5vh;
-    width: 25vw;
-    align-items: center;
-}
-
-.container-center {
-    display: flex;
-    height: 5vh;
-}
-
-.top h1 {
-    margin: 0;
-    color: white;
-    font-size: 2.5em;
-    text-align: center;
-    line-height: 5.5vh;
-}
-
-.top img {
-    width: 10em;
-    margin: 5px;
-}
-
-.top a {
-    margin-left: auto;
-    text-decoration: none;
-    color: white;
-    padding: 5px;
 }
 
 body {
@@ -76,6 +15,62 @@ body {
     background: #fff;
     color: #222;
     background: url(https://djave.co.uk/hosted/subtlepatterns/lightpaperfibers.png);
+}
+
+.top {
+  position: relative;
+  width: 100%;
+  background-color: #009de0;
+  font-family: Arcade;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-left {
+  display: flex;
+  height: auto;
+  width: 15vw;
+  text-align: left;
+}
+
+.container-right {
+  display: flex;
+  height: auto;
+  width: 15vw;
+  align-items: center;
+}
+
+.container-center {
+  display: flex;
+  height: auto;
+  width: auto;
+}
+
+.top h1 {
+  margin: 5px;
+  color: white;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.top img {
+  width: 10vw;
+  margin-right: auto;
+  margin-left: 0.5vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.top a {
+  margin-left: auto;
+  margin-right: 0.5vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-decoration: none;
+  text-align: end;
+  color: white;
 }
 
 .mono {
