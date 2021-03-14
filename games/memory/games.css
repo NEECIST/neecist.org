@@ -10,7 +10,7 @@ html {
 body{
   font-family: Roboto, sans-serif;
   font-size: 20px;
-  background-color:rgb(46, 40, 40);
+  background-color:white;
   margin: 0;
 }
 
@@ -72,7 +72,7 @@ body{
 
 .card_game{
     padding:5vh;
-    background-image: linear-gradient(to left bottom, #24211d, #3b3535);
+    background-image: white;
 }
 
 .row{
@@ -136,7 +136,7 @@ body{
   background-color: transparent;
   width: 12vh;
   height: 15vh;
-  border: 1px solid #f1f1f1;
+  border: 1px solid black;
   perspective: 100px;
   text-align: center;
   font-size: 15px;
@@ -154,7 +154,7 @@ body{
   height: 15vh;
   transform: rotateY(180deg);
   background-color: black;
-  border: 1px solid #f1f1f1;
+  border: 1px solid black;
   perspective: 100px;
 }
 
@@ -188,17 +188,17 @@ body{
 .moves{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color:whitesmoke;
+    color:black;
 }
 
 .timer{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color:whitesmoke;
+    color:black;
 }
 
 .final{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
-    color:greenyellow;
+    color:green;
 }
