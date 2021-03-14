@@ -1,5 +1,6 @@
-.top {
-    background-color: #009de0;
+@font-face {
+    font-family: Arcade;
+    src: url(../fonts/PressStart2P-Regular.ttf);
 }
 
 .background {
@@ -19,41 +20,52 @@
   pointer-events: none;
 }
 
+.top {
+    background-color: #009de0;
+    font-family: Arcade;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.container-left {
+    display: flex;
+    height: 5vh;
+    width: 25vw;
+    text-align: left;
+}
+
+.container-right {
+    display: flex;
+    height: 5vh;
+    width: 25vw;
+    align-items: center;
+}
+
+.container-center {
+    display: flex;
+    height: 5vh;
+}
+
 .top h1 {
     margin: 0;
     color: white;
-    font-size: 2.4em;
+    font-size: 2.5em;
     text-align: center;
+    line-height: 5.5vh;
 }
 
 .top img {
-    width: 150px;
+    width: 10em;
     margin: 5px;
 }
 
-@media screen and (min-width: 400px) {
-    .top {
-        text-align: center;
-    }
-    
-    .top img {
-        position: relative;
-        float: none;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .top {
-        text-align: unset;
-        position: relative;
-    }
-    
-    .top img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-    }
+.top a {
+    margin-left: auto;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
 }
 
 body {
@@ -65,6 +77,7 @@ body {
     color: #222;
     background: url(https://djave.co.uk/hosted/subtlepatterns/lightpaperfibers.png);
 }
+
 .mono {
     font-family: "Cutive Mono", monospace;
 }

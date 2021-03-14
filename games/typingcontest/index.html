@@ -1,38 +1,47 @@
 <html lang="pt">
     <head>
         <meta charset="UTF-8">
-		<title>Typing Contest Game</title>
-        <link href='https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:400,900,700' rel='stylesheet' type='text/css'/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Typing Contest</title>
+        <link rel="font" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:400,900,700" type="text/css">
         <link rel="stylesheet" href="games.css">
-        <link rel="icon" type="image/png" href="assets/logo_neec.png">
+        <link rel="icon" type="image/png" href="../assets/logo_neec.png">
     </head>
-    <body>
+<body>
 <div class="background"></div>
-        <div class="top">
-            <img id="logo-neec-full" src="assets/Logo_NEEC_White.png" alt="Logo NEEC Completo">
-            <h1>Testa a tua velocidade de escrita!</h1>
+    <div class="top">
+        <div class="container-left">
+            <img id="logo-neec-full" src="../assets/Logo_NEEC_White.png" alt="Logo NEEC Completo">
         </div>
+        <div class="container-center">
+            <h1>Typing Contest</h1>
+        </div>
+        <div class="container-right">
+            <a href="http://neecist.org/games">Back</a>
+        </div>
+    </div>
 
-        <div class="results">
-            <ul class="stats">
-                <li>Caracteres por minuto <span id="cpm">0</span></li>
-                <li>Charcount <span id="charcount">0</span></li>
-                <li>Timer <span id="timer">0</span></li>
-                <li>Erros <span id="errors">0</span></li>
-            </ul>
-        </div>
-        <h1 id="output"></h1>
-        <div class="target mono" id="target"></div>
-        <div id="your-attempt" class="mono your-attempt" placeholder="Your text will appear here"></div>
-        <hr style="clear:both;" />
-        <div>
-        <textarea name="" id="input_text" cols="30" rows="10"></textarea>
-        </div>
-        <div class="settings">
-            <a href="#" id="new">Novo</a>
-            <a href="#" id="pause">Pausa</a>
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="games.js"></script>
-    </body>
+    <div class="results">
+        <ul class="stats">
+            <li>Caracteres por minuto <span id="cpm">0</span></li>
+            <li>Charcount <span id="charcount">0</span></li>
+            <li>Timer <span id="timer">0</span></li>
+            <li>Erros <span id="errors">0</span></li>
+        </ul>
+    </div>
+    <h1 id="output"></h1>
+    <div class="target mono" id="target"></div>
+    <div id="your-attempt" class="mono your-attempt" placeholder="Your text will appear here"></div>
+    <hr style="clear:both;" />
+    <div>
+    <textarea name="" id="input_text" cols="30" rows="10"></textarea>
+    </div>
+    <div class="settings">
+        <a href="#" id="new">Novo</a>
+        <a href="#" id="pause">Pausa</a>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="games.js"></script>
+</body>
 </html>
