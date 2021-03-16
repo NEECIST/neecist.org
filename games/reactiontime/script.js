@@ -1,11 +1,13 @@
-const clickBox = document.getElementById('logo-neec');
+const logoNeec = document.getElementById('logo-neec');
 const printTime = document.getElementById('reaction-time');
 const startButton = document.getElementById('start-button');
 const countdown = document.getElementById('countdown');
+const clickBox = document.getElementById('click-box');
 
-var clickedTime;
-var startTime;
-var reactionTime;
+var startTime = 0;
+var clickedTime = 0;
+var reactionTime = 0;
+var gameStart = false;
 
 /**
  * creates a box with random coordinates and records its creation time
@@ -18,31 +20,43 @@ function makeBox() {
     setTimeout( () => {
         var top = Math.random();
         var left = Math.random() - 0.5;
-        top *= 300;
-        left *= 500;
+        top *= 20;
+        left *= 30;
 
-        clickBox.style.top = top + 'px';
-        clickBox.style.left = left + 'px';
+        logoNeec.style.top = top + 'vh';
+        logoNeec.style.left = left + 'vw';
         
         startTime=Date.now();
 
-        clickBox.style.display = 'block'
+        logoNeec.style.display = 'block'
 
     }, time);
 }
 
 clickBox.onclick = () => {
+    if (startTime === 0 && gameStart) {
+        alert('Espera até a imagem aparecer para clicares!');
+    }
+}
+
+logoNeec.onclick = () => {
     clickedTime = Date.now();
     reactionTime = (clickedTime - startTime) / 1000;
 
     printTime.innerHTML = 'O teu tempo de reação é: ' + reactionTime + ' segundos';
-    clickBox.style.display = 'none';
+    logoNeec.style.display = 'none';
     startButton.style.display = 'inline';
 }
 
 startButton.onclick = function() {
     this.style.display = 'none';
     printTime.innerHTML = '';
+    
+    gameStart = true;
+    startTime = 0;
+    clickedTime = 0;
+    reactionTime = 0;
+
     
     var t = 3;
     var timer = setInterval(() => {

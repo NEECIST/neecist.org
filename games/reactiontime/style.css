@@ -73,18 +73,22 @@ body {
 
 .main {
     margin: auto;
-    width: 50%;
+    width: fit-content;
     text-align: center;
 }
 
+.click-box {
+    display: flex;
+    height: 500px;
+    width: 800px;
+    margin: auto;
+}
+
 .bottom {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    position: relative;
     margin-top: 5vh;
     margin-bottom: 5vh;
     text-align: center;
-    align-items: center;
 }
 
 .bottom input {
@@ -102,8 +106,7 @@ body {
 }
 
 #logo-neec {
-    width: 300px;
-    height: 250px;
+    width: 200px;
     display: none;
     position: relative;
     margin: auto;
