@@ -19,7 +19,7 @@ var typing_text = [
   "NEEC is a non-profit association that brings together MEEC students from IST. We are made up of students who, through their voluntary work, provide various activities to their colleagues.",
   "At NEEC we seek to help students integrate into the job market and provide extra-curricular training. We organize workshops, summer internships, OpenDays, we organize a hackathon and much more!",
   "NEEC wants to help complement the normal school path, not only for Electrotechnical students, but also for everyone at IST. We started in 2003, and for almost a decade and a half we have been growing to help you.",
-  "NEECTalks are a project that consists of making podcasts, about technology, innovation and entrepreneurship in engineering. We intend to present students, teachers, researchers, entrepreneurs, among others.",
+  "NEECTalks is a project that consists of making podcasts about technology, innovation and entrepreneurship in engineering. We intend to present students, teachers, researchers, entrepreneurs, among others.",
   "IST Summer Internships was implemented in order to facilitate the rapprochement between IST students and companies. This program has the support of Técnico through the Center for Business Partnerships.",
   "An internship is an undeniable added value to the academic career of a student of Higher Education, enabling you with different and complementary skills to the training acquired at Instituto Superior Tecnico.",
   "The main objectives of the IST Summer Internships are to stimulate various activities aimed at reinforcing the curricular training of students, through training, internship programs, etc.",
