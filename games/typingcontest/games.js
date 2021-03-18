@@ -3,7 +3,7 @@
  * https://codepen.io/EightArmsHQ/pen/HJsav
  */
 
-var typing_text = [
+var typing_text_pt = [
     "O NEEC é uma associação sem fins lucrativos que reúne os estudantes de MEEC do IST. Somos formados por alunos que, através do seu trabalho voluntário, proporcionam diversas atividades aos seus colegas.",
     "No NEEC procuramos ajudar os alunos a integrarem-se no mercado de trabalho e dar formação extra-curricular. Organizamos workshops, estágios de verão, OpenDays, organizamos uma hackathon e muito mais!",
     "O NEEC quer ajudar a complementar o normal percurso escolar, não só dos alunos de Eletrotecnia, como também de todos do IST. Começámos em 2003, e já por quase década e meia temos vindo a crescer para te ajudar.",
@@ -14,6 +14,19 @@ var typing_text = [
     "Um grupo de estudantes do IST, cujo principal objetivo é organizar um evento gratuito e aberto a uma forte comunidade de estudantes, com a intenção de diminuir a distância entre o mundo empresarial e a vida universitária.",
     "A NEECathon é uma competição cujo objetivo é simular o mundo das start-ups. Os participantes vão ser avaliados não só pelo seu projeto como também pela forma como vendem a sua ideia e como gerem os seus recursos."
 ]
+
+var typing_text = [
+  "NEEC is a non-profit association that brings together MEEC students from IST. We are made up of students who, through their voluntary work, provide various activities to their colleagues.",
+  "At NEEC we seek to help students integrate into the job market and provide extra-curricular training. We organize workshops, summer internships, OpenDays, we organize a hackathon and much more!",
+  "NEEC wants to help complement the normal school path, not only for Electrotechnical students, but also for everyone at IST. We started in 2003, and for almost a decade and a half we have been growing to help you.",
+  "NEECTalks is a project that consists of making podcasts about technology, innovation and entrepreneurship in engineering. We intend to present students, teachers, researchers, entrepreneurs, among others.",
+  "IST Summer Internships was implemented in order to facilitate the rapprochement between IST students and companies. This program has the support of Técnico through the Center for Business Partnerships.",
+  "An internship is an undeniable added value to the academic career of a student of Higher Education, enabling you with different and complementary skills to the training acquired at Instituto Superior Tecnico.",
+  "The main objectives of the IST Summer Internships are to stimulate various activities aimed at reinforcing the curricular training of students, through training, internship programs, etc.",
+  "A group of students from IST, whose main objective is to organize a free and open event to a strong student community, with the intention of closing the gap between the business world and university life.",
+  "NEECathon is a competition whose objective is to simulate the world of start-ups. Participants will be evaluated not only for their project but also for how they sell their idea and how they manage their resources."
+]
+
 // The base speed per character
 time_setting = 30;
 // How much to 'sway' (random * this-many-milliseconds)
