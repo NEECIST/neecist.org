@@ -1,16 +1,14 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+    <style id="stndz-style"></style>
+    <link rel="preconnect" href="https://use.fontawesome.com">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/main.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <script src="./assets/main.js"></script>
-    <link rel="stylesheet" type="text/css"
-        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <title>Scoreboards</title>
@@ -18,53 +16,346 @@
 
 <body>
     <div class="topnav" id="myTopnav">
-        <a class="active">Rankings</a>
-        <a href="#" class="dropdown_item-1" >Typing Contest</a>
-        <a href="#" class="dropdown_item-2" >Reaction Time</a>
-        <a href="#" class="dropdown_item-3" >Jogo Da Memória</a>
-        <a href="#" class="dropdown_item-4" >Speed Quiz</a>
-        <a href="javascript:goBack()" class="dropdown_item-5"><i class="fas fa-arrow-circle-left"></i> Back</a>
+        <a class="active" href="https://neecist.org/"><img class="logo"
+                src="https://cdn.discordapp.com/attachments/763466219964596256/819309850437484564/Logo_NEEC_White.png"></a>
+        <a href="javascript:void(0);" onclick="show('semana')" class="days dropdown_item-1">Geral <p
+                style="font-size: 0.8rem;vertical-align: middle;font-family: sans-serif;color: white;">
+                Live&nbsp;&nbsp;<i class="fas fa-circle live_blink"
+                    style="font-size: 0.8rem;vertical-align: middle; color: red;"></i></p></a>
+        <a href="javascript:void(0);" onclick="show('segunda')" class="days dropdown_item-2">2ª Feira <p id="seg_live"
+                class="d_none" style="font-size: 0.8rem;vertical-align: middle;font-family: sans-serif;color: white;">
+                Live&nbsp;&nbsp;<i class="fas fa-circle live_blink"
+                    style="font-size: 0.8rem;vertical-align: middle; color: red;"></i></p></a>
+        <a href="javascript:void(0);" onclick="show('terca')" class="days dropdown_item-3">3ª Feira <p id="ter_live"
+                class="d_none" style="font-size: 0.8rem;vertical-align: middle;font-family: sans-serif;color: white;">
+                Live&nbsp;&nbsp;<i class="fas fa-circle live_blink"
+                    style="font-size: 0.8rem;vertical-align: middle; color: red;"></i></p></a>
+        <a href="javascript:void(0);" onclick="show('quarta')" class="days dropdown_item-4">4ª Feira <p id="qua_live"
+                class="d_none" style="font-size: 0.8rem;vertical-align: middle;font-family: sans-serif;color: white;">
+                Live&nbsp;&nbsp;<i class="fas fa-circle live_blink"
+                    style="font-size: 0.8rem;vertical-align: middle; color: red;"></i></p></a>
+        <a href="javascript:void(0);" onclick="show('quinta')" class="days dropdown_item-5">5ª Feira <p id="qui_live"
+                class="d_none" style="font-size: 0.8rem;vertical-align: middle;font-family: sans-serif;color: white;">
+                Live&nbsp;&nbsp;<i class="fas fa-circle live_blink"
+                    style="font-size: 0.8rem;vertical-align: middle; color: red;"></i></p></a>
+        <a href="javascript:void(0);" onclick="show('sexta')" class="days dropdown_item-6">6ª Feira <p id="sex_live"
+                class="d_none" style="font-size: 0.8rem;vertical-align: middle;font-family: sans-serif;color: white;">
+                Live&nbsp;&nbsp;<i class="fas fa-circle live_blink"
+                    style="font-size: 0.8rem;vertical-align: middle; color: red;"></i></p></a>
+        <a href="javascript:goBack()" class="days back dropdown_item-7"><i class="fas fa-arrow-circle-left"></i>
+            Back</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
-    <div class='container cadeira'>
-        <div class='teoricas tres'>
-            <a class='title'>Typing Contest</a>
-            <a class='first' href='#'>1º - Armando - 320 wpm</a>
-            <a class='next' href='#'>2º - Amanda - 41</a>
-            <a class='next' href='#'>3º - Armindo - 37</a>
-            <a class='next' href='#'>4º - Amarino - 34</a>
-            <a class='next' href='#'>5º - Antonieta - 33</a>
-            <a class='next' href='#'>6º - Sérgio - 25</a>
-            <a class='next' href='#'>7º - Alice - 23</a>
-        </div>
-        <div class='teoricas tres'>
-            <a class='title'>Reaction Time</a>
-            <a class='first' href='#'>1º - Armando - 320 wpm</a>
-            <a class='next' href='#'>2º</a>
-            <a class='next' href='#'>3º</a>
-
-        </div>
-        <div class='teoricas tres'>
-            <a class='title'>Jogo Da Memória</a>
-            <a class='first' href='#'>1º</a>
-            <a class='next' href='#'>2º</a>
-            <a class='next' href='#'>3º</a>
-
-        </div>
-        <div class='teoricas tres'>
-            <a class='title'>Speed Quiz</a>
-            <a class='first' href='#'>1º</a>
-            <a class='next' href='#'>2º</a>
-            <a class='next' href='#'>3º</a>
-
+    <img id="gif" class="d_none"
+        src="https://cdn.discordapp.com/attachments/818483802636288042/820363639420485692/loading.gif">
+    <div id="outer_box" class="d_none">
+        <div class="outer_box">
+            <p class="loading">A carregar...</p>
+            <img class="loading_img"
+                src="https://cdn.discordapp.com/attachments/763466219964596256/819708501286060033/neeclogo_compacto-01.png">
         </div>
     </div>
-    <button onclick="loadFile('https:\/\/midas-cloud.xyz:1769\/https:\/\/docs.google.com\/spreadsheets\/d\/1ieP5xH924Fi36IxQ4U7ERInOblQP9ZsX6vX-6lmXtB8\/gviz\/tq?tqx=out:csv&sheet=RT&range=B:B,F:F')">Teste</button>
-    <a href="javascript:void(0);" class="icon" onclick="isoOdd()" id="text">typingcontest.csv</a>
-    
-   <script>
+    <h2 id="semana" class="">Scoreboards da Semana:</h2>
+    <h2 id="segunda" class="invisible">Segunda-Feira:</h2>
+    <h2 id="terca" class="invisible">Terça-Feira:</h2>
+    <h2 id="quarta" class="invisible">Quarta-Feira:</h2>
+    <h2 id="quinta" class="invisible">Quinta-Feira:</h2>
+    <h2 id="sexta" class="invisible">Sexta-Feira:</h2>
+    <div class="scoreboards semana container" style="margin-top: 0;">
+        <div class="geral teoricas tres" id="GERAL">
+            <a class="title shake">Geral</a>
+            <a class="first">1. Henrique Santos - 385</a><a class="next">2. Tiago Ferreira - 270</a><a class="next">3.
+                João Almeida - 260</a><a class="next">4. Francisco Santos - 260</a><a class="next">5. Daniel Rosa -
+                180</a><a class="next">6. João Gil Cruz - 145</a><a class="next">7. Ricardo Caetano - 135</a><a
+                class="next">8. Miguel Monteiro - 100</a><a class="next">9. Francisco Rodrigues - 75</a><a
+                class="next">10. Gonçalo Frazão - 75</a><a class="next">11. Inês Pinto - 70</a><a class="next">12. Vítor
+                Maçãs - 70</a><a class="next">13. Filipe Póvoa - 65</a><a class="next">14. Eduardo Barrancos - 60</a><a
+                class="next">15. António Almeida - 55</a><a class="next">16. Ricardo Antão - 55</a><a class="next">17.
+                Margarida Pinheiro - 55</a><a class="next">18. Rita Mendes - 55</a><a class="next">19. Hugo Andrade -
+                50</a><a class="next">20. Jaime Aguiar - 45</a><a class="next">21. Guilherme Viegas - 45</a><a
+                class="next">22. Pedro Paiva - 40</a><a class="next">23. Eduardo Barata - 40</a><a class="next">24.
+                Afonso Ravasco - 40</a><a class="next">25. Guilherme Mascarenhas - 35</a><a class="next">26. Tiago Leite
+                - 30</a><a class="next">27. André Teixeira - 30</a><a class="next">28. Madalena Barros - 25</a><a
+                class="next">29. João Domingues - 20</a><a class="next">30. Catarina Amaro - 20</a><a class="next">31.
+                Guilherme Guerreiro - 20</a><a class="next">32. João Marques - 20</a><a class="next">33. André Silva -
+                20</a><a class="next">34. Duarte Honrado - 20</a><a class="next">35. Pedro Baptista - 15</a><a
+                class="next">36. Ana Cruz - 15</a><a class="next">37. João Gomes - 10</a><a class="next">38. Bruno
+                Cebola - 10</a><a class="next">39. João Rodrigues - 10</a>
+        </div>
+        <div class="container">
+            <div class="teoricas tres" id="TR_semana">
+                <a class="title shake">Typing Contest</a>
+                <a class="first">1. João Gil Cruz - 410</a><a class="next">2. Henrique Santos - 341</a><a
+                    class="next">3. Daniel Rosa - 331</a><a class="next">4. Gonçalo Frazão - 326</a><a class="next">5.
+                    Guilherme Viegas - 323</a><a class="next">6. Rita Mendes - 312</a><a class="next">7. Eduardo Barata
+                    - 309</a><a class="next">8. André Teixeira - 296</a><a class="next">9. Ricardo Caetano - 290</a><a
+                    class="next">10. António Almeida - 287</a><a class="next">11. Tiago Ferreira - 266</a><a
+                    class="next">12. Francisco Santos - 260</a><a class="next">13. Eduardo Barrancos - 235</a><a
+                    class="next">14. Guilherme Guerreiro - 231</a><a class="next">15. Filipe Póvoa - 230</a><a
+                    class="next">16. André Silva - 227</a><a class="next">17. Guilherme Mascarenhas - 219</a><a
+                    class="next">18. Madalena Barros - 206</a><a class="next">19. Jaime Aguiar - 200</a><a
+                    class="next">20. Margarida Pinheiro - 193</a><a class="next">21. Inês Pinto - 184</a><a
+                    class="next">22. Ricardo Antão - 168</a><a class="next">23. João Marques - 128</a>
+            </div>
+            <div class="teoricas tres" id="RT_semana">
+                <a class="title shake-1">Reaction Time</a>
+                <a class="first">1. João Almeida - 0.142</a><a class="next">2. Rita Mendes - 0.273</a><a class="next">3.
+                    Gonçalo Frazão - 0.297</a><a class="next">4. Jaime Aguiar - 0.325</a><a class="next">5. Filipe Póvoa
+                    - 0.332</a><a class="next">6. Francisco Santos - 0.334</a><a class="next">7. Pedro Baptista -
+                    0.335</a><a class="next">8. Henrique Santos - 0.336</a><a class="next">9. Ricardo Caetano -
+                    0.345</a><a class="next">10. Tiago Ferreira - 0.37</a><a class="next">11. Guilherme Guerreiro -
+                    0.370</a><a class="next">12. Vítor Maçãs - 0.376</a><a class="next">13. Guilherme Viegas -
+                    0.389</a><a class="next">14. João Gil Cruz - 0.39</a><a class="next">15. André Teixeira -
+                    0.391</a><a class="next">16. Pedro Paiva - 0.396</a><a class="next">17. Catarina Amaro - 0.396</a><a
+                    class="next">18. João Marques - 0.396</a><a class="next">19. Tiago Leite - 0.425</a><a
+                    class="next">20. André Silva - 0.441</a><a class="next">21. Margarida Pinheiro - 0.446</a><a
+                    class="next">22. Eduardo Barrancos - 0.449</a><a class="next">23. Bruno Cebola - 0.449</a><a
+                    class="next">24. Eduardo Barata - 0.468</a><a class="next">25. Daniel Rosa - 0.468</a><a
+                    class="next">26. Miguel Monteiro - 0.49</a><a class="next">27. João Domingues - 0.505</a><a
+                    class="next">28. Madalena Barros - 0.509</a><a class="next">29. Hugo Andrade - 0.541</a><a
+                    class="next">30. António Vidais - 0.558</a><a class="next">31. Duarte Costa - 0.565</a><a
+                    class="next">32. Inês Pinto - 0.598</a>
+            </div>
+            <div class="teoricas tres" id="Mem_semana">
+                <a class="title shake-2">Memory Game</a>
+                <a class="first">1. Filipe Póvoa - 32.331</a><a class="next">2. Henrique Santos - 33.318</a><a
+                    class="next">3. Tiago Ferreira - 35.346</a><a class="next">4. Daniel Rosa - 38.777</a><a
+                    class="next">5. Miguel Monteiro - 40.145</a><a class="next">6. Francisco Santos - 40.503</a><a
+                    class="next">7. Hugo Andrade - 41.546</a><a class="next">8. Eduardo Barrancos - 42.504</a><a
+                    class="next">9. António Almeida - 42.754</a><a class="next">10. Ricardo Caetano - 44.473</a><a
+                    class="next">11. João Almeida - 45.017</a><a class="next">12. Margarida Pinheiro - 46.589</a><a
+                    class="next">13. Francisco Rodrigues - 49.106</a><a class="next">14. Vítor Maçãs - 49.664</a><a
+                    class="next">15. Madalena Barros - 53.353</a><a class="next">16. Rita Mendes - 53.812</a><a
+                    class="next">17. João Domingues - 55.667</a><a class="next">18. Bruno Cebola - 57.004</a><a
+                    class="next">19. Guilherme Viegas - 57.77</a><a class="next">20. Catarina Amaro - 59.829</a><a
+                    class="next">21. Tiago Leite - 59.94</a><a class="next">22. Guilherme Guerreiro - 60.745</a><a
+                    class="next">23. Duarte Honrado - 62.001</a><a class="next">24. Gonçalo Frazão - 62.231</a><a
+                    class="next">25. João Marques - 64.751</a><a class="next">26. Inês Pinto - 66.705</a><a
+                    class="next">27. João Gil Cruz - 68.423</a><a class="next">28. Eduardo Barata - 68.521</a><a
+                    class="next">29. André Silva - 72.967</a><a class="next">30. Duarte Costa - 78.093</a><a
+                    class="next">31. Pedro Paiva - 78.512</a><a class="next">32. João Gomes - 105.548</a><a
+                    class="next">33. Pedro Baptista - 171.343</a>
+            </div>
+            <div class="teoricas tres" id="Quiz_semana">
+                <a class="title shake-3">Speed Quiz</a>
+                <a class="first">1. João Almeida - 42</a><a class="next">2. Henrique Santos - 42</a><a class="next">3.
+                    Francisco Santos - 41</a><a class="next">4. Tiago Ferreira - 41</a><a class="next">5. João Gil Cruz
+                    - 36</a><a class="next">6. Hugo Andrade - 35</a><a class="next">7. Daniel Rosa - 34</a><a
+                    class="next">8. Ricardo Antão - 33</a><a class="next">9. Duarte Honrado - 29</a><a class="next">10.
+                    Francisco Rodrigues - 23</a><a class="next">11. Guilherme Mascarenhas - 19</a><a class="next">12.
+                    Vítor Maçãs - 18</a><a class="next">13. Afonso Ravasco - 12</a><a class="next">14. Inês Pinto -
+                    11</a><a class="next">15. Ana Cruz - 9</a><a class="next">16. Miguel Monteiro - 8</a><a
+                    class="next">17. Ricardo Caetano - 8</a><a class="next">18. Madalena Barros - 8</a><a
+                    class="next">19. Bruno Cebola - 6</a><a class="next">20. Catarina Amaro - 5</a><a class="next">21.
+                    Guilherme Viegas - 5</a><a class="next">22. João Marques - 5</a><a class="next">23. Gonçalo Frazão -
+                    4</a><a class="next">24. André Silva - 4</a><a class="next">25. João Rodrigues - 4</a><a
+                    class="next">26. Eduardo Barata - 3</a><a class="next">27. Guilherme Guerreiro - 3</a><a
+                    class="next">28. Rui Domingos - 2</a><a class="next">29. Rita Mendes - 2</a><a class="next">30.
+                    Filipe Póvoa - 2</a><a class="next">31. Pedro Paiva - 1</a>
+            </div>
+        </div>
+    </div>
+    <div class=" scoreboards segunda invisible" style="margin-top: 0;">
+        <div class="container">
+            <div class="teoricas tres" id="TR_seg">
+                <a class="title shake">Typing Contest</a>
+                <a class="first">1. António Almeida - 287</a><a class="next">2. Henrique Santos - 246</a><a
+                    class="next">3. Eduardo Barrancos - 235</a><a class="next">4. Guilherme Mascarenhas - 219</a><a
+                    class="next">5. Tiago Ferreira - 177</a>
+            </div>
+            <div class="teoricas tres" id="RT_seg">
+                <a class="title shake-1">Reaction Time</a>
+                <a class="first">1. João Almeida - 0.306</a><a class="next">2. Tiago Ferreira - 0.370</a><a
+                    class="next">3. Francisco Santos - 0.38</a><a class="next">4. Pedro Paiva - 0.396</a><a
+                    class="next">5. Henrique Santos - 0.445</a><a class="next">6. Eduardo Barrancos - 0.449</a><a
+                    class="next">7. João Domingues - 0.505</a><a class="next">8. Hugo Andrade - 0.541</a><a
+                    class="next">9. Miguel Monteiro - 0.578</a><a class="next">10. Inês Pinto - 0.606</a>
+            </div>
+            <div class="teoricas tres" id="Mem_seg">
+                <a class="title shake-2">Memory Game</a>
+                <a class="first">1. Eduardo Barrancos - 42.504</a><a class="next">2. António Almeida - 42.754</a><a
+                    class="next">3. Francisco Santos - 48.104</a><a class="next">4. Henrique Santos - 50.446</a><a
+                    class="next">5. Francisco Rodrigues - 61.26</a><a class="next">6. Inês Pinto - 66.705</a><a
+                    class="next">7. Tiago Ferreira - 72.419</a><a class="next">8. Miguel Monteiro - 75.911</a><a
+                    class="next">9. Pedro Paiva - 78.512</a><a class="next">10. João Gomes - 105.548</a>
+            </div>
+            <div class="teoricas tres" id="Quiz_seg">
+                <a class="title shake-3">Speed Quiz</a>
+                <a class="first">1. João Almeida - 4</a><a class="next">2. Ricardo Antão - 2</a><a class="next">3.
+                    Francisco Santos - 2</a><a class="next">4. Pedro Paiva - 1</a><a class="next">5. Inês Pinto -
+                    1</a><a class="next">6. Henrique Santos - 1</a>
+            </div>
+        </div>
+    </div>
+    <div class=" scoreboards terca invisible" style="margin-top: 0;">
+        <div class="container scoreboards">
+            <div class="teoricas tres" id="TR_ter">
+                <a class="title shake">Typing Contest</a>
+                <a class="first">1. João Gil Cruz - 410</a><a class="next">2. Henrique Santos - 314</a><a
+                    class="next">3. Eduardo Barata - 309</a><a class="next">4. Guilherme Viegas - 280</a><a
+                    class="next">5. Daniel Rosa - 257</a><a class="next">6. Ricardo Caetano - 249</a><a class="next">7.
+                    Francisco Santos - 237</a><a class="next">8. Margarida Pinheiro - 193</a><a class="next">9. Tiago
+                    Ferreira - 190</a><a class="next">10. Inês Pinto - 184</a><a class="next">11. Ricardo Antão -
+                    168</a>
+            </div>
+            <div class="teoricas tres" id="RT_ter">
+                <a class="title shake-1">Reaction Time</a>
+                <a class="first">1. João Almeida - 0.142</a><a class="next">2. Jaime Aguiar - 0.325</a><a
+                    class="next">3. Francisco Santos - 0.334</a><a class="next">4. Pedro Baptista - 0.335</a><a
+                    class="next">5. Henrique Santos - 0.341</a><a class="next">6. Tiago Ferreira - 0.37</a><a
+                    class="next">7. Guilherme Viegas - 0.389</a><a class="next">8. Catarina Amaro - 0.396</a><a
+                    class="next">9. Tiago Leite - 0.425</a><a class="next">10. Margarida Pinheiro - 0.446</a><a
+                    class="next">11. Eduardo Barata - 0.468</a><a class="next">12. Daniel Rosa - 0.512</a><a
+                    class="next">13. António Vidais - 0.558</a><a class="next">14. Duarte Costa - 0.565</a><a
+                    class="next">15. Inês Pinto - 0.598</a>
+            </div>
+            <div class="teoricas tres" id="Mem_ter">
+                <a class="title shake-2">Memory Game</a>
+                <a class="first">1. Hugo Andrade - 41.546</a><a class="next">2. Daniel Rosa - 45.416</a><a
+                    class="next">3. João Almeida - 46.341</a><a class="next">4. Henrique Santos - 46.478</a><a
+                    class="next">5. Margarida Pinheiro - 46.589</a><a class="next">6. Francisco Rodrigues - 49.106</a><a
+                    class="next">7. Francisco Santos - 49.744</a><a class="next">8. João Domingues - 55.667</a><a
+                    class="next">9. Catarina Amaro - 59.829</a><a class="next">10. Tiago Ferreira - 68.386</a><a
+                    class="next">11. Eduardo Barata - 68.521</a><a class="next">12. Inês Pinto - 68.784</a><a
+                    class="next">13. Duarte Costa - 78.093</a><a class="next">14. Pedro Baptista - 171.343</a>
+            </div>
+            <div class="teoricas tres" id="Quiz_ter">
+                <a class="title shake-3">Speed Quiz</a>
+                <a class="first">1. João Almeida - 12</a><a class="next">2. Inês Pinto - 11</a><a class="next">3. Afonso
+                    Ravasco - 9</a><a class="next">4. Ana Cruz - 9</a><a class="next">5. Francisco Santos - 9</a><a
+                    class="next">6. Francisco Rodrigues - 8</a><a class="next">7. Ricardo Antão - 6</a><a
+                    class="next">8. Guilherme Mascarenhas - 6</a><a class="next">9. Henrique Santos - 5</a><a
+                    class="next">10. Tiago Ferreira - 5</a><a class="next">11. Guilherme Viegas - 5</a><a
+                    class="next">12. Vítor Maçãs - 5</a><a class="next">13. Ricardo Caetano - 5</a><a class="next">14.
+                    Catarina Amaro - 4</a><a class="next">15. Daniel Rosa - 4</a><a class="next">16. Miguel Monteiro -
+                    3</a><a class="next">17. Rui Domingos - 2</a><a class="next">18. Eduardo Barata - 1</a>
+            </div>
+        </div>
+    </div>
+    <div class=" scoreboards quarta invisible" style="margin-top: 0;">
+        <div class="container scoreboards">
+            <div class="teoricas tres" id="TR_qua">
+                <a class="title shake">Typing Contest</a>
+                <a class="first">1. João Gil Cruz - 332</a><a class="next">2. Daniel Rosa - 331</a><a class="next">3.
+                    Guilherme Viegas - 323</a><a class="next">4. Henrique Santos - 318</a><a class="next">5. Rita Mendes
+                    - 312</a><a class="next">6. Gonçalo Frazão - 267</a><a class="next">7. Ricardo Caetano - 263</a><a
+                    class="next">8. Guilherme Guerreiro - 231</a><a class="next">9. Filipe Póvoa - 230</a><a
+                    class="next">10. André Silva - 227</a><a class="next">11. Tiago Ferreira - 219</a><a
+                    class="next">12. Madalena Barros - 206</a><a class="next">13. Francisco Santos - 187</a><a
+                    class="next">14. João Marques - 128</a>
+            </div>
+            <div class="teoricas tres" id="RT_qua">
+                <a class="title shake-1">Reaction Time</a>
+                <a class="first">1. Rita Mendes - 0.273</a><a class="next">2. Filipe Póvoa - 0.332</a><a class="next">3.
+                    Henrique Santos - 0.336</a><a class="next">4. Ricardo Caetano - 0.345</a><a class="next">5. João
+                    Almeida - 0.352</a><a class="next">6. Guilherme Guerreiro - 0.370</a><a class="next">7. João Marques
+                    - 0.396</a><a class="next">8. João Gil Cruz - 0.412</a><a class="next">9. Tiago Ferreira -
+                    0.43</a><a class="next">10. André Silva - 0.441</a><a class="next">11. Bruno Cebola - 0.449</a><a
+                    class="next">12. Gonçalo Frazão - 0.472</a><a class="next">13. Miguel Monteiro - 0.49</a><a
+                    class="next">14. Madalena Barros - 0.509</a><a class="next">15. Daniel Rosa - 0.560</a>
+            </div>
+            <div class="teoricas tres" id="Mem_qua">
+                <a class="title shake-2">Memory Game</a>
+                <a class="first">1. Filipe Póvoa - 32.331</a><a class="next">2. Tiago Ferreira - 37.957</a><a
+                    class="next">3. Daniel Rosa - 38.777</a><a class="next">4. Miguel Monteiro - 40.145</a><a
+                    class="next">5. Henrique Santos - 40.675</a><a class="next">6. João Almeida - 46.736</a><a
+                    class="next">7. Margarida Pinheiro - 50.839</a><a class="next">8. Madalena Barros - 53.353</a><a
+                    class="next">9. Rita Mendes - 53.812</a><a class="next">10. Ricardo Caetano - 56.49</a><a
+                    class="next">11. Bruno Cebola - 57.004</a><a class="next">12. Guilherme Viegas - 57.77</a><a
+                    class="next">13. Francisco Santos - 58</a><a class="next">14. Guilherme Guerreiro - 60.745</a><a
+                    class="next">15. Gonçalo Frazão - 62.231</a><a class="next">16. João Marques - 64.751</a><a
+                    class="next">17. João Gil Cruz - 68.423</a><a class="next">18. André Silva - 72.967</a><a
+                    class="next">19. João Domingues - 75.75</a>
+            </div>
+            <div class="teoricas tres" id="Quiz_qua">
+                <a class="title shake-3">Speed Quiz</a>
+                <a class="first">1. Vítor Maçãs - 18</a><a class="next">2. João Almeida - 13</a><a class="next">3.
+                    Afonso Ravasco - 12</a><a class="next">4. Henrique Santos - 11</a><a class="next">5. Madalena Barros
+                    - 8</a><a class="next">6. Tiago Ferreira - 6</a><a class="next">7. Bruno Cebola - 6</a><a
+                    class="next">8. Francisco Rodrigues - 6</a><a class="next">9. Miguel Monteiro - 6</a><a
+                    class="next">10. João Marques - 5</a><a class="next">11. Ricardo Antão - 5</a><a class="next">12.
+                    João Gil Cruz - 5</a><a class="next">13. Gonçalo Frazão - 4</a><a class="next">14. André Silva -
+                    4</a><a class="next">15. Ricardo Caetano - 3</a><a class="next">16. Guilherme Guerreiro - 3</a><a
+                    class="next">17. Guilherme Mascarenhas - 3</a><a class="next">18. Rita Mendes - 2</a><a
+                    class="next">19. Filipe Póvoa - 2</a>
+            </div>
+        </div>
+    </div>
+    <div class=" scoreboards quinta invisible" style="margin-top: 0;">
+        <div class="container scoreboards">
+            <div class="teoricas tres" id="TR_qui">
+                <a class="title shake">Typing Contest</a>
+                <a class="first">1. Henrique Santos - 341</a><a class="next">2. Gonçalo Frazão - 326</a><a
+                    class="next">3. Eduardo Barata - 299</a><a class="next">4. André Teixeira - 296</a><a
+                    class="next">5. Daniel Rosa - 294</a><a class="next">6. Ricardo Caetano - 277</a><a class="next">7.
+                    Tiago Ferreira - 266</a><a class="next">8. Francisco Santos - 260</a><a class="next">9. Jaime Aguiar
+                    - 200</a>
+            </div>
+            <div class="teoricas tres" id="RT_qui">
+                <a class="title shake-1">Reaction Time</a>
+                <a class="first">1. Gonçalo Frazão - 0.297</a><a class="next">2. Francisco Santos - 0.358</a><a
+                    class="next">3. Tiago Ferreira - 0.383</a><a class="next">4. Henrique Santos - 0.385</a><a
+                    class="next">5. André Teixeira - 0.391</a><a class="next">6. Ricardo Caetano - 0.394</a><a
+                    class="next">7. João Almeida - 0.394</a><a class="next">8. Jaime Aguiar - 0.446</a><a
+                    class="next">9. Tiago Leite - 0.451</a><a class="next">10. Miguel Monteiro - 0.493</a><a
+                    class="next">11. Eduardo Barata - 0.497</a><a class="next">12. João Domingues - 0.55</a>
+            </div>
+            <div class="teoricas tres" id="Mem_qui">
+                <a class="title shake-2">Memory Game</a>
+                <a class="first">1. Henrique Santos - 33.318</a><a class="next">2. Tiago Ferreira - 35.568</a><a
+                    class="next">3. Francisco Santos - 44.328</a><a class="next">4. João Almeida - 45.017</a><a
+                    class="next">5. Miguel Monteiro - 48.486</a><a class="next">6. Ricardo Caetano - 50.175</a><a
+                    class="next">7. Francisco Rodrigues - 51.124</a><a class="next">8. Daniel Rosa - 53.027</a><a
+                    class="next">9. Tiago Leite - 59.94</a><a class="next">10. Gonçalo Frazão - 96.069</a>
+            </div>
+            <div class="teoricas tres" id="Quiz_qui">
+                <a class="title shake-3">Speed Quiz</a>
+                <a class="first">1. Henrique Santos - 12</a><a class="next">2. João Gil Cruz - 10</a><a class="next">3.
+                    Miguel Monteiro - 8</a><a class="next">4. Ricardo Caetano - 7</a><a class="next">5. Daniel Rosa -
+                    6</a><a class="next">6. Ricardo Antão - 6</a><a class="next">7. Guilherme Mascarenhas - 6</a><a
+                    class="next">8. Francisco Rodrigues - 5</a><a class="next">9. João Rodrigues - 4</a><a
+                    class="next">10. Tiago Ferreira - 4</a><a class="next">11. Eduardo Barata - 3</a>
+            </div>
+        </div>
+    </div>
+    <div class=" scoreboards sexta invisible" style="margin-top: 0;">
+        <div class="container scoreboards">
+            <div class="teoricas tres" id="TR_sex">
+                <a class="title shake">Typing Contest</a>
+                <a class="first">1. Henrique Santos - 337</a><a class="next">2. Daniel Rosa - 314</a><a class="next">3.
+                    João Gil Cruz - 291</a><a class="next">4. Ricardo Caetano - 290</a><a class="next">5. Francisco
+                    Santos - 245</a><a class="next">6. Tiago Ferreira - 232</a>
+            </div>
+            <div class="teoricas tres" id="RT_sex">
+                <a class="title shake-1">Reaction Time</a>
+                <a class="first">1. Francisco Santos - 0.338</a><a class="next">2. Vítor Maçãs - 0.376</a><a
+                    class="next">3. João Almeida - 0.383</a><a class="next">4. Tiago Ferreira - 0.384</a><a
+                    class="next">5. João Gil Cruz - 0.39</a><a class="next">6. Ricardo Caetano - 0.408</a><a
+                    class="next">7. Henrique Santos - 0.427</a><a class="next">8. Daniel Rosa - 0.468</a>
+            </div>
+            <div class="teoricas tres" id="Mem_sex">
+                <a class="title shake-2">Memory Game</a>
+                <a class="first">1. Tiago Ferreira - 35.346</a><a class="next">2. Francisco Santos - 40.503</a><a
+                    class="next">3. Ricardo Caetano - 44.473</a><a class="next">4. Henrique Santos - 47.59</a><a
+                    class="next">5. Vítor Maçãs - 49.664</a><a class="next">6. Margarida Pinheiro - 50.677</a><a
+                    class="next">7. Duarte Honrado - 62.001</a><a class="next">8. Daniel Rosa - 62.921</a><a
+                    class="next">9. Miguel Monteiro - 81.874</a>
+            </div>
+            <div class="teoricas tres" id="Quiz_sex">
+                <a class="title shake-3">Speed Quiz</a>
+                <a class="first">1. Henrique Santos - 42</a><a class="next">2. João Almeida - 42</a><a class="next">3.
+                    Francisco Santos - 41</a><a class="next">4. Tiago Ferreira - 41</a><a class="next">5. João Gil Cruz
+                    - 36</a><a class="next">6. Hugo Andrade - 35</a><a class="next">7. Daniel Rosa - 34</a><a
+                    class="next">8. Ricardo Antão - 33</a><a class="next">9. Duarte Honrado - 29</a><a class="next">10.
+                    Francisco Rodrigues - 23</a><a class="next">11. Guilherme Mascarenhas - 19</a><a class="next">12.
+                    Ricardo Caetano - 8</a><a class="next">13. Catarina Amaro - 5</a><a class="next">14. Rui Domingos -
+                    1</a>
+            </div>
+        </div>
+    </div>
+    <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
@@ -74,41 +365,12 @@
             }
         }
 
-        function change(cadeira, n) {
-            var x = document.getElementsByClassName(cadeira);
-            var y = document.getElementsByClassName("cadeira");
-
-            document.cookie = "cadeira=" + cadeira + "; expires=Wed, 18 Dec 2026 12:00:00 GMT";
-            document.cookie = "n=" + n + "; expires=Wed, 18 Dec 2026 12:00:00 GMT";
-
-            console.log(x);
-
-
-            for (let item of y) {
-                item.className += " invisible";
-            }
-            console.log(x);
-            for (let item of x) {
-                item.classList.remove("invisible");
-                item.className += " visible";
-            }
-            console.log(x);
-
-            x = document.getElementById("myTopnav");
-            x = x.children;
-            console.log(x);
-            for (let item of x) {
-                item.classList.remove("selected");
-            }
-            x[n].className += " selected";
-            x = document.getElementById("myTopnav");
-            x.className = "topnav";
-        }
-
         function goBack() {
             window.history.back();
         }
     </script>
+
+
 
 </body>
 
