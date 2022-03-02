@@ -3,50 +3,52 @@ int banana0 = A0;
 int banana1 = A1;
 int banana2 = A2;
 int banana3 = A3;
+int buzzer = 10;
 
-// a rotina de setup corre uma vez no início do programa e sempre que o butão reset é pressionado
+// a rotina de setup corre uma vez no início do programa e sempre que o botão reset é pressionado
 void setup() {
- ?
-  
+  Serial.begin(9600);
+
   // define as bananas como portas INPUT_PULLUP
-?
-?
-?
-?
-?
+  ?
+  ?
+  ?
+  ?
 }
 
 // a rotina loop corre infinitamente até que o o botão reset seja pressionado
 void loop() {
-  //  get readings from analog ports
+  //  obter leituras dos pinos analógicos
   ?
   ?
   ?
   ?
-  
-  // Convert the analog readings (which goes from 0 - 1023) to a voltage (0 - 5V):
+
+  // converter as leituras analógicas (valores de 0 a 1023) para tensões (0 a 5V):
   float voltage0 = reading0 * (5.0 / 1023.0);
   float voltage1 = reading1 * (5.0 / 1023.0);
   float voltage2 = reading2 * (5.0 / 1023.0);
   float voltage3 = reading3 * (5.0 / 1023.0);
-  
-  // check voltages to determine which banana was pressed and play tone associated with it
-  if(   ?    ){
-    ?
-  }
-  else if(   ?    ){
-    ?
-  }
-  else if(   ?    ){
-    ?
-  }
-  else if(   ?    ){
-    ?
-  }
-  else{
-    ?
-  }
 
-  // print out the value you read:
+  // print da leitura da banana0:
   Serial.println(voltage0);
+  
+  // verificação das tensões para ver qual banana foi pressionada e tocar o som de cada uma
+  //if (   ?    ) {
+  //  ?
+  //}
+  //else if (   ?    ) {
+  //  ?
+  //}
+  //else if (   ?    ) {
+  //  ?
+  //}
+  //else if (   ?    ) {
+  //  ?
+  //}
+  //else {
+  //  noTone(buzzer);
+  //}
+
+  
 }
