@@ -8,7 +8,6 @@
 /redirect/salas     https://fenix.tecnico.ulisboa.pt/conteudos-publicos/pesquisa-de-espacos 301
 /redirect/twitter   https://twitter.com/NEECIST 301
 /redirect/youtube   https://www.youtube.com/user/NEECIST 301
-/redirect/neecathon http://51.140.123.139:8080 301
 /redirect/voting      http://51.143.162.18:5000 301
 /redirect/scoreboard https://neecist.org/games/scoreboard 301
 /redirect/www       / 301
